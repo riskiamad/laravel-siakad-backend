@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages/blank-page', ['type_menu' => '']);
-});
+    return view('pages/dashboard/dashboard-general-dashboard', ['type_menu' => 'dashboard']);
+})->middleware(['auth'])->name('home');
