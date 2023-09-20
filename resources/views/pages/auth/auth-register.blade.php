@@ -21,19 +21,27 @@
                         <label for="name">Name</label>
                         <input id="name"
                             type="text"
-                            class="form-control"
+                            class="form-control @error('name') is-invalid @enderror"
                             name="name"
                             autofocus>
+                        @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email"
                         type="email"
-                        class="form-control"
+                        class="form-control @error('email') is-invalid @enderror"
                         name="email">
+                    @error('email')
                     <div class="invalid-feedback">
+                        {{ $message }}
                     </div>
+                    @enderror
                 </div>
 
                     <div class="form-group">
@@ -41,8 +49,13 @@
                             class="d-block">Password</label>
                         <input id="password"
                             type="password"
-                            class="form-control pwstrength"
+                            class="form-control pwstrength @error('password') is-invalid @enderror"
                             name="password">
+                        @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
@@ -50,8 +63,13 @@
                                class="d-block">Password Confirmation</label>
                         <input id="password2"
                                type="password"
-                               class="form-control"
+                               class="form-control @error('password_confirmation') is-invalid @enderror"
                                name="password_confirmation">
+                        @error('password_confirmation')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
 
                 <div class="form-group">
@@ -73,6 +91,9 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div class="text-muted mt-5 text-center">
+        Already have an account? <a href="/login">login</a>
     </div>
 @endsection
 
