@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages/dashboard/dashboard-general-dashboard', ['type_menu' => 'dashboard']);
 })->middleware(['auth'])->name('home');
+
+Route::resource('user', \App\Http\Controllers\UserController::class)->middleware(['auth']);
